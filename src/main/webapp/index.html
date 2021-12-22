@@ -2,24 +2,35 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Awsome App</title>
+<title>Awesome App</title>
 </head>
 <body>
 
-	<h1>Welcome Employee!</h1>
+	<h1>Welcome, Employee!</h1>
 	<h3>Please login below</h3>
 	
-	<!-- Post is more secure when working with password is hide the params from the 
-	url in bar
-	 -->
-	<form action="" method="POST">
-	<label>Username: </label>
-	<input   type="text" name="username" placeholder="Enter a username please">
+	<!--  POST requests obfuscate the parameters from the search bar UNLIKE a GET request -->
+	<form method="POST" action="login"> <!--  The post request will be sent to http://localhost:8080/FrontControllerDemo/login -->
 	
-	<label>Password: </label>
-	<input   type="password" name="password" placeholder="Enter a password please">
+		<label>Username:</label>
+		<input type="text" name="username" placeholder="Enter a username please">
+		
+		<br />
+		
+		<label>Password:</label>
+		<input type="password" name="password" placeholder="Enter a password please">
 	
-		<input   type="submit" value="login!">
+		<!-- This button should send a request (specifed by method) to the servlet indicated by "action" -->
+		<input type="submit" value="Login!">
+	</form>
+	
+	
+	<!-- If someone clicks this button, they retrieve ALL the employees in the DB -->
+	<form method="GET" action="employees"> <!-- http://localhost:8080/FrontControllerDemo/employees -->
+	
+		<p> To see all employees in the system, please click below</p>
+		<input type="submit" value="Click me!">
+		
 	</form>
 
 </body>
